@@ -2,7 +2,7 @@
 
 # Check if the script is running as root
 if [ "$(id -u)" -ne 0 ]; then
-    echo "This script must be run as root. Please use 'sudo' or switch to the root user('su -')." >&2
+    echo -e "\033[31m\n========================================\nThis script must be run as root.\nPlease use 'sudo' or switch to the root user('su -').\n========================================\033[0m" >&2
     exit 1
 fi
 
