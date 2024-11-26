@@ -1,5 +1,11 @@
 #for ubuntu:20:04/Debian:10
 
+# Check if the script is running as root
+if [ "$(id -u)" -ne 0 ]; then
+    echo "This script must be run as root. Please use 'sudo' or switch to the root user('su -')." >&2
+    exit 1
+fi
+
 apt update
 apt install -y build-essential libtool zlib1g-dev openssl libpcre3 libpcre3-dev libssl-dev libgeoip-dev #ufw
 
